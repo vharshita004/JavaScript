@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(name, age, college, degree) {
+                this.name = name;
+                this.age = age;
+                this.college = college;
+                this.degree = degree;
+            }
+       //don't have to use function keyword while creating function inside a class
+            show_info() {
+                //safe option is to alaways write this for accessing property
+                //console.log(name);
+                console.log(this.name);
+            }
+            
+
+        }
+
+        const x = new Student('Anu', 21, 'Global', 'Btech');
+        const y = new Student('Kajal', 22, 'IITDM', 'Mtech');
+
+        console.log(x);
+        x.show_info();
+
+        console.log(y);
+        y.show_info();
+
+
+        //for 1000s of students you have to create constructor
+    </script>
+</body>
+</html>
