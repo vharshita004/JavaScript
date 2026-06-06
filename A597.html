@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        function Student(name, age, college) {
+            this.name = name;
+            this.age = age;
+            this.college = college;
+
+            this.show_info = function() {
+                console.log(name);
+           }
+        }
+
+        const x = new Student('Arun', 35, 'Global');
+        const y = new Student('Meena', 23, 'IITDM');
+
+        console.log(x);
+        x.show_info();
+        
+        console.log(y);
+        y.show_info();
+    </script>
+</body>
+</html>
