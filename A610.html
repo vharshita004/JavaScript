@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name, age, email) {
+               this.name = name;
+               this.age = age;
+               this.email = email;
+            }
+
+            show_info() {
+                return `My Name: ${this.name}, My Age: ${this.age}, My Email: ${this.email}`
+            }
+        }
+
+        class Employee extends User {
+            constructor(name, age, email, salary, company) {
+                super(name, age, email);
+               this.salary = salary;
+               this.compamny = company;
+            }
+
+            show_info() {
+                return `${super.show_info()}, My Company: ${this.company}, My Designation: ${this.designation},  My Salary: ${this.salary}`;
+            }    
+        }
+
+        class Student extends User {
+            constructor(name, age, email, rollno, branch) {
+                 super(name, age, email);
+               this.rollno = rollno;
+               this.branch = branch;
+            }
+
+            show_info() {
+                return `${this.show_info()}, My College: ${this.college}, My Degree: ${this.degree},  My Branch: ${this.branch}`;
+            }
+        }
+
+        const x = new Employee('Suraj', 45, 's@gmail.com', 67000, 'Wipro');
+        const y = new Student('Komal', 21, 'k@gmail.com', 34556, 'CSE');
+
+        console.log(x);
+        console.log(y);
+
+    </script>
+</body>
+</html>
