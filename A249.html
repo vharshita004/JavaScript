@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        let x = prompt('Press 1 for English, 2 for Hindi and 3 for Tamil: ')
+        x = parseInt(x)
+
+        switch(x) {
+            case 1:
+                console.log('Hello')
+                let y = parseInt(prompt('Enter your marks (0/75): '))
+                switch(y) {
+                    case 0 :
+                        console.log('Fail');
+                        break;
+                    case 75 :
+                        console.log('Pass');
+                        break;
+                }
+                break;
+            case 2:
+                console.log('Namaste')
+                break;
+            case 3:
+                console.log('Vadakkam')
+                break;
+            default: 
+                console.log('Kem Cho...')
+        }
+
+        console.log('------')
+    </script>
+</body>
+</html>

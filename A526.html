@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #a {
+            width: 500px;
+            height: 300px;
+            border: 4px solid red;
+            position: relative;
+        }
+
+        #b {
+            width: 300px;
+            height: 160px;
+            border: 4px solid green;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        
+        #c {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            border: 4px solid blue;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <p id="b">
+            <span id="c">
+
+            </span>
+        </p>
+    </div>
+
+    <script>
+        const a = document.querySelector('#a');
+        // const b = document.querySelector('#b');
+        // const c = document.querySelector('#c');
+
+        a.addEventListener('click', (e) => {
+           let tg = e.target.tagName;
+
+           if(tg == 'DIV')
+           console.log("Mai div bol raha hu");
+           else if(tg == 'P')
+           console.log('Mai p bol raha hu');
+           else if(tg == 'SPAN')
+           console.log('Mai span bol raha hu')
+        });
+        
+        // b.addEventListener('click', (e) => {
+        //     console.log('p', e.target);
+        // });
+        
+        // c.addEventListener('click', (e) => {
+        //     e.stopPropagation();
+        //     console.log('span', e.target);
+        // });
+    </script>
+</body>
+</html>

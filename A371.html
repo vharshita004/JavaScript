@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        let x = [34,56,12,9,7,45,82,90,71]
+
+        let max = x[0];
+
+        for(next of x) {
+            if(next > max) {
+                max = next;
+            }
+        }
+
+        console.log(x);
+        console.log('------------');
+        console.log(`The largest no. in array is ${max}`);
+    </script>
+</body>
+</html>

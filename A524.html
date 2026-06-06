@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #a {
+            height: 400px;
+            width: 400px;
+            border: 4px solid red;
+            position: relative;
+        }
+
+        #b {
+            height: 300px;
+            width: 300px;
+            border: 4px solid green;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+
+        #c {
+            height: 200px;
+            width: 200px;
+            border: 4px solid blue;
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            display: inline-block;
+            
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id='a'>
+        <p id="b">
+            <span id="c">
+
+            </span>
+        </p>
+    </div>
+
+    <script>
+        const a = document.querySelector('#a');
+        // const b = document.querySelector('#b');
+        // const c = document.querySelector('#c');
+
+        a.addEventListener('click', (ev) => {
+          console.log('span', ev.target);
+          console.log('p', ev.target);
+          console.log('div', ev.target);
+        });
+
+        // b.addEventListener('click', (ev) => {
+        //     console.log('p', ev.target.tagName);
+        // });
+
+        // c.addEventListener('click', (ev) => {
+        //     console.log('span',ev.target.tagName);
+        // });
+
+    </script>
+</body>
+</html>

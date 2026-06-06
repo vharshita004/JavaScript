@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const x = new Object();
+        console.log(x);
+        x.name = 'ram';
+        x.age = 34;
+        x.phone = '567895434';
+        x.address = 'Orange city';
+        x.degree = 'Btech';
+        x.show_info = function() {
+            console.log(this.name);
+        }
+         
+        for(let prop in x) {
+            console.log(prop, x[prop]);
+        }
+    </script>
+</body>
+</html>

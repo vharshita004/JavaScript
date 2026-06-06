@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello </h1>
+
+    <hr>
+
+    <script>
+        function aaa(y) {
+            console.log('aaa()', y);
+            return 10;
+        }
+
+        function bbb(x) {
+            console.log('bbb()', x);
+        }
+        
+        function ccc() {
+            console.log('ccc()');
+            return 5;
+        }
+
+        bbb(aaa(ccc()))   //---> bbb(aaa(5)) ---> bbb(10)
+    </script>
+</body>
+</html>

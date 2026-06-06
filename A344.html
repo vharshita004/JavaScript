@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+
+        //Function recursion....
+
+        //Mere pass koi global variable nhi h pr fir bi control krna chata hu
+
+        function process(n) {
+            console.log(n);
+            if(n>0)
+               process(n-1); //recursive function call....
+        }
+
+        process(3);
+    </script>
+</body>
+</html>
