@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">Send Request</button>
+
+    <table id="tbl">
+        <tr>
+            <th>User Id</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Completed</th>
+        </tr>
+    </table>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const tbl = document.querySelector('#tbl'); 
+
+        let i = 1;
+
+        btn.addEventListener('click', () => {
+
+                const req = new XMLHttpRequest();
+
+                req.open('GET', 'https://jsonplaceholder.typicode.com/todos/' + i , true);
+
+
+                req.addEventListener('readystatechange', () => {
+                    if (req.readyState == 4 && req.status == 200) {
+                       // let resp = req.responseText;
+
+                        let jsObj = JSON.parse(req.responseText);
+
+                        let row = tbl.insertRow(i++);
+
+                        let j = 0;
+                        
+                        for(let prop in jsObj) {
+                            let cell = row.insertCell(j++);
+                            cell.innerText = jsObj[prop];
+                        }
+                    }
+
+                });
+                req.send();
+        });
+    </script>
+</body>
+
+</html>
