@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        //polyfill
+
+        const arr = new Array('A', 'B', 'C', 'D', 'E');
+        
+        Array.prototype.xfilter = function() {
+              console.log('Mujhe Pukara..');
+              console.log(this);
+        };
+
+        arr.xfilter();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        //polyfill
+
+    //    const obj = {
+    //     name : 'pratyush',
+    //     age : 34,
+    //     showinfo() {
+    //         //console.log(name, age);
+    //         console.log(this.name, this.age);
+    //     }
+    //    }
+    //     console.log(obj.name, obj.age);
+
+    const obj = {
+        name : 'suman',
+        age : 34,
+        showinfo() {
+           // console.log(name, age);
+            console.log(this.name, this.age);
+            console.log(this);
+        }
+    }
+       obj.showinfo();
+    </script>
+</body>
+</html>
