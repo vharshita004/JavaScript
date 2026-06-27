@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: verdana;
+        }
+
+        input {
+            font-size: 22px;
+            padding: 5px 12px;
+            border: 1px solid rgb(203, 197, 197);
+            border-radius: 4px;
+        }
+
+        label { 
+            font-size: 28px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #form_box {
+            width: 25%;
+            border: 2px solid red;
+            margin: 20px auto;
+            border-radius: 8px;
+            padding: 15px;;
+        }
+
+        .field_box {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="frm">
+        <div id="form_box">
+            <div class="field_box">
+                <label for="name">Name</label>
+                <input type="text" class="field" id="name">
+            </div>
+            <div class="field_box">
+                <label for="email">Email</label>
+                <input type="email" class="field" id="email">
+            </div>
+            <div class="field_box">
+                <label for="dob">DOB</label>
+                <input type="date" class="field" id="dob">
+            </div>
+            <div>
+                <input type="button" id="btn" value="Save">
+            </div>
+        </div>    
+    </form>
+
+    <hr>
+
+    <button id="show_btn">Show Record</button>
+
+    <table border="1px" align="center" width="30%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>dob</th>
+            </tr>
+        </thead>
+        <tbody id="records">
+            <tr>
+                <td colspan="3">
+                    <h3>No Records Found</h3>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const frm = document.querySelector('#frm');
+        const btn = document.querySelector('#btn');
+        const fields = document.querySelectorAll('.field');
+        const show_btn = document.querySelector('#show_btn');
+        const records = document.querySelector('#records');
+
+        let n = localStorage.length+1;
+
+        btn.addEventListener('click', () => {
+            localStorage.setItem(`rec${n++}`, JSON.stringify({
+                                                  name : fields[0].value,
+                                                  email : fields[1].value,
+                                                  dob : fields[2].value
+                                              }));
+            console.log(n);
+            frm.reset();
+        });
+
+        show_btn.addEventListener('click', () => {
+            records.innerHTML = '';
+
+            for(i=0; i<localStorage.length; i++) {
+                let kNm = localStorage.key(i);
+
+                let obj = JSON.parse(localStorage.getItem(kNm));
+
+                let row = records.insertRow(i);
+
+                let j = 0;
+                for(let prop in obj) {
+                    let cell = row.insertCell(j++);
+                    cell.innerText = obj[prop];
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: verdana;
+        }
+
+        input {
+            font-size: 22px;
+            padding: 5px 12px;
+            border: 1px solid rgb(203, 197, 197);
+            border-radius: 4px;
+        }
+
+        label { 
+            font-size: 28px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #form_box {
+            width: 25%;
+            border: 2px solid red;
+            margin: 20px auto;
+            border-radius: 8px;
+            padding: 15px;;
+        }
+
+        .field_box {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="frm">
+        <div id="form_box">
+            <div class="field_box">
+                <label for="name">Name</label>
+                <input type="text" class="field" id="name">
+            </div>
+            <div class="field_box">
+                <label for="email">Email</label>
+                <input type="email" class="field" id="email">
+            </div>
+            <div class="field_box">
+                <label for="dob">DOB</label>
+                <input type="date" class="field" id="dob">
+            </div>
+            <div>
+                <input type="button" id="btn" value="Save">
+            </div>
+        </div>    
+    </form>
+
+    <script>
+        const frm = document.querySelector('#frm');
+        const btn = document.querySelector('#btn');
+        const fields = document.querySelectorAll('.field');
+
+        let i = 1;
+
+        btn.addEventListener('click', () => {
+            localStorage.setItem(`rec${i++}`, {
+                                                  name : fields[0].value,
+                                                  email : fields[1].value,
+                                                  dob : fields[2].value
+                                              });
+            frm.reset();
+        });
+
+    </script>
+</body>
+</html>
