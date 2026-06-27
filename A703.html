@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        const arr = [
+                        {name: 'Vijay', age: 23, marks: 56.67},
+                        {name: 'Jay', age: 12, marks: 78.89},
+                        {name: 'Parajay', age: 34, marks: 62.12},
+                        {name: 'Aparajit', age: 9, marks: 67.34}
+                    ];
+
+        console.log(arr);
+        
+        const nameAscSortFunc = (a, b) => {
+            // console.log(a.name, b.name, a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
+            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+        };
+
+        const nameDscSortFunc = (a, b) => {
+            // console.log(a.name, b.name, a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
+            return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+        };
+
+       // arr.sort(nameAscSortFunc);
+        arr.sort(nameDscSortFunc);
+        
+        console.log(arr);
+
+        // let a = 'mohan';
+        // let b = 'mihan';
+        // let c = 'mohan';
+        // console.log(b < a ? -1 : b > a ? 1 : 0)
+
+    </script>
+</body>
+</html>
