@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        const arr = [45, 12, 78, 37, 91, 49, 24];
+        
+        Array.prototype.xfilter = function(func) {
+            // console.log(func);
+            // console.log(this);
+            for(let next of this) {
+                func(next);
+            }
+        };
+
+        arr.xfilter((n) => {
+            console.log('i\'m the callback : ', n);
+        });
+
+        arr.xfilter((n) => {
+            console.log('i\'m the great callback : ', n);
+        });
+
+        arr.xfilter((n) => {
+            console.log(n * 2);
+        });
+    </script>
+</body>
+</html>

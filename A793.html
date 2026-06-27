@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        const arr = [45, 12, 78, 37, 91, 49, 24];
+        
+        Array.prototype.xfilter = function(func) {
+            const tmp = [];
+
+            for(let next of this) {
+               if(func(next))  
+                 tmp.push(next);
+            }
+            return tmp;
+        };
+        
+        // xfilter() is a polyfill of Array.filter() 
+        // const ar = arr.xfilter((n)=> n < 50);
+         const ar = arr.xfilter((n)=> n > 40);
+        // const ar = arr.xfilter((n)=> n % 2);
+        // const ar = arr.xfilter((n)=> !(n % 2));
+
+        console.log(arr);
+        console.log(ar);
+    </script>
+</body>
+</html>
