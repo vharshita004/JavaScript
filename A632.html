@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Hellooooo</h1>
+
+   <script>
+      const x = {name: 'vighnesh', age: 9, school: 'ABC', marks: 99.99};
+
+      console.log(x, typeof x);
+      console.log(x.name);
+      console.log(x['name']);
+
+      const y = JSON.stringify(x);
+        
+        console.log(y, typeof y);
+        console.log(y.name);
+        console.log(y['name']);
+
+        //now it is a json string so it will print undefined
+   </script>
+</body>
+</html>

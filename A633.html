@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Ji</h1>
+
+    <hr>
+
+    <script>
+        const x = '{"name":"vighnesh","age":9,"school":"ABC","marks":99.99}';
+
+        console.log(x, typeof x);
+        console.log(x.name);
+        console.log(x['name']);
+        
+        // Json String to JS Object
+        const y = JSON.parse(x);
+        
+        console.log(y, typeof y);
+        console.log(y.name);
+        console.log(y['name']);
+
+    </script>
+</body>
+</html>
