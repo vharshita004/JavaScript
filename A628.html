@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <script>
+        const req = new XMLHttpRequest();
+
+        console.log(req.readyState);
+        
+        req.open('GET', 'https://jsonplaceholder.typicode.com/todos/1', true);
+        console.log(req.readyState);
+        
+        req.addEventListener('readystatechange', () => {
+            //response handling
+            if(req.readyState == 4 && req.status == 200) {
+                //console.log(req.responseText , ' ####');
+               // console.log(req.responseText.userId , '####');
+               // console.log(req.responseText["userId"] , '####');
+                console.log(req.responseText, typeof req.responseText);
+            }
+            console.log(req.readyState);
+        });
+
+        req.send();
+
+    </script>
+</body>
+</html>

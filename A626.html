@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        hellooo...
+    </h1>
+
+    <script>
+        const req = new XMLHttpRequest();
+        console.log(req.readyState);
+
+        req.open('GET', 'http://jsonplaceholder.typicode.com/', true);
+        console.log(req.readyState);
+
+        req.addEventListener('readystatechange', () => {
+            console.log(req.readyState + '----' + req.status)
+        });
+
+        req.send();
+    </script>
+</body>
+</html>

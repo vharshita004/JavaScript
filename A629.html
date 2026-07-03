@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Helloo
+    </h1>
+    <script>
+        const req = new XMLHttpRequest();
+        
+        req.open('GET', 'http://jsonplaceholder.typicode.com/todos/1', true);
+
+        req.addEventListener('readystatechange', () => {
+            if(req.readyState == 4 && req.status == 200) {
+                const jsonStr = req.responseText;
+                const jsObj = JSON.parse(jsonStr);
+                
+                console.log(jsonStr, typeof jsonStr);
+                console.log(jsObj, typeof jsObj);
+            }
+        });
+
+        req.send();
+    </script>
+</body>
+</html>
