@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: verdana;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <hr>
+
+    <button type="button" id="btn">Send Request...</button>
+    <table border="1" align="center" width="70%" id="tbl">
+        <tr>
+            <th>User Id</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Completed</th>
+        </tr>
+
+    </table>
+
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const tbl = document.querySelector('#tbl');
+
+        let start = 1;
+
+        btn.addEventListener('click', () => {
+
+            for(i=start;i<10+start;i++) {                
+                const req = new XMLHttpRequest();
+        
+                req.open('GET', 'https://jsonplaceholder.typicode.com/todos/' + i, false);
+        
+                req.addEventListener('readystatechange', () => {
+                    if(req.readyState == 4 && req.status == 200) {
+                        let jsObj = JSON.parse(req.responseText);
+    
+                        let row = tbl.insertRow(i);
+    
+                        let j = 0;
+                        for(let prop in jsObj) {
+                            let cell = row.insertCell(j++);
+                            cell.innerText = jsObj[prop]; 
+                        }
+                    }
+                });
+        
+                req.send();
+            }
+
+            start += 10;
+        });
+
+    </script>
+</body>
+</html>
